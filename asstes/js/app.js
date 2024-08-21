@@ -32,9 +32,14 @@ async function buscarCategoriasPorId(idCategory) {
 function mostrarCategoria(categoria) {
     const resultadosDiv = document.getElementById('resultados');
     resultadosDiv.innerHTML = `
-        <h3>Categoría: ${categoria.strCategory}</h3>
-        <p>${categoria.strCategoryDescription}</p>
-        <img src="${categoria.strCategoryThumb}" alt="${categoria.strCategory}" />
+        <div class="card" style="width: auto;">
+        <img src="${categoria.strCategoryThumb}" alt="${categoria.strCategory}" class="card-img-top">
+        <div class="card-body">
+            <h5 class="card-title">Categoría: ${categoria.strCategory}</h5>
+            <p class="card-text">${categoria.strCategoryDescription}</p>
+            <a href="#recipeForm" class="btn btn-primary">Busca otra receta</a>
+        </div>
+</div>
     `;
 }
 
